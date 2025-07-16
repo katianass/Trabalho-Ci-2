@@ -1,0 +1,29 @@
+name: 'Execucao Manual'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependências
+        run: yarn install
+
+      - name: Instalando Playwright
+        run: yarn playwright install
+
+      - name: Executando Testes E2E
+        run: npx mocha src/index.js

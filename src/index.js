@@ -1,0 +1,1 @@
+console.log("Execução manual via GitHub Actions funcionando!");
