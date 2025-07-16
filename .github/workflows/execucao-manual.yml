@@ -1,7 +1,7 @@
 name: 'Execucao Manual'
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 
 
 jobs:
   e2e-tests:
@@ -21,9 +21,6 @@ jobs:
 
       - name: Instalando dependências
         run: yarn install
-
-      - name: Instalando Playwright
-        run: yarn playwright install
 
       - name: Executando Testes E2E
         run: npx mocha src/index.js
